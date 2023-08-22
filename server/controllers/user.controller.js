@@ -1,4 +1,6 @@
 const { signupService, findUserByEmail } = require('../services/user.service');
+const jwt = require('jsonwebtoken');
+const { promisify } = require('util');
 const { generateToken } = require('../utils/token');
 const User = require('../models/User');
 
@@ -90,6 +92,81 @@ exports.login = async (req, res) => {
 	}
 };
 
+exports.resetPassword = async (req, res, next) => {
+	try {
+		const email = req.body.email;
+
+		const user = await User.findOne({ email });
+		const token = generateToken(user, '3m');
+
+		const updatedUser = await User.findOneAndUpdate(
+			{ email },
+			{ passwordResetToken: token },
+			{
+				upsert: true, // Set to true to enable upsert behavior
+				new: true, // Return the modified document after update
+				runValidators: true,
+			}
+		);
+
+		if (!user) {
+			return res.status(401).json({
+				status: 'fail',
+				message: 'Please create an account',
+			});
+		}
+
+		req.resetToken = updatedUser.passwordResetToken;
+		next();
+	} catch (error) {
+		res.status(500).json({
+			status: 'fail',
+			error,
+		});
+	}
+};
+
+exports.forgetPassword = async (req, res) => {
+	try {
+		const passwordResetToken = req?.params?.resetToken;
+		// const decoded = await promisify(jwt.verify)(
+		// 	passwordResetToken,
+		// 	process.env.ACCESS_TOKEN_SECRET
+		// );
+		// console.log(decoded);
+		const user = await User.findOne({ passwordResetToken });
+		const hashedPassword = user.createHashedPassword(req.body.password);
+
+		const resetPasswordUser = await User.findOneAndUpdate(
+			{
+				passwordResetToken,
+			},
+			{ passwordResetToken: '', password: hashedPassword },
+			{ new: true }
+		);
+		// const user = await User.findOneAndUpdate({
+		// 	passwordResetToken: resetToken,
+		// });
+
+		if (!resetPasswordUser) {
+			return res.status(401).json({
+				status: 'fail',
+				message: 'Link does not exist',
+			});
+		}
+
+		res.status(200).json({
+			status: 'success',
+			message: 'Password successfully changed',
+		});
+	} catch (error) {
+		res.status(500).json({
+			status: 'fail',
+			error,
+		});
+	}
+};
+
 exports.getMe = async (req, res) => {
 	try {
 		const user = await findUserByEmail(req.user?.email);
@@ -124,15 +201,14 @@ exports.verifyUser = async (req, res) => {
   `;
 	try {
 		const userId = req.params.verificationToken;
-		console.log(userId);
+
+		// console.log(userId);
 
 		const verifyUser = await User.updateOne(
 			{ _id: userId },
 			{ verified: true },
 			{ new: true }
 		);
-
-		console.log(verifyUser);
 
 		res.send(verifyContent);
 	} catch (error) {

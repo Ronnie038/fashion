@@ -13,18 +13,26 @@ const transporter = nodemailer.createTransport({
 // const verificationToken = generateVerificationToken(32);
 
 const mailHandler = async (req, res, next) => {
-	const verificationToken = req.user._id.toString();
+	const verificationToken = req?.user?._id.toString();
+
+	const passwordResetToken = req?.resetToken;
 
 	// Compose the verification link
 
-	const verificationLink = `${process.env.APP_URL}/api/v1/user/verify/${verificationToken}`;
-	console.log(verificationLink);
+	const verificationLink = `${process.env.APP_URL}/api/v1/user/${
+		verificationToken ? 'verify' : 'forget-password'
+	}/${verificationToken || passwordResetToken}`;
 
 	// HTML template for the verification email
+	console.log(verificationLink);
 	const emailTemplate = `
-      <h1>Verify Your Email</h1>
+      <h1>${
+				verificationToken ? 'Verify Your Email' : 'Reset your password'
+			}</h1>
       <p>Click the link below to verify your email:</p>
-      <a href="${verificationLink}">${verificationLink}</a>
+      <a href="${verificationLink}">${
+		verificationToken ? 'verify your email' : 'password reset link'
+	}</a>
     `;
 
 	try {
