@@ -7,8 +7,8 @@ const Navbar = () => {
   return (
     <div className="container mx-auto py-3 xl:px-0 lg:px-2 md:px-5">
       <div className="lg:navbar md:navbar px-0">
-        <div className="flex-1 lg:w-48 w-60 py-5 mx-auto lg:h-14 ">
-          <Link to="/" className="">
+        <div className="flex-1 lg:w-48 md:w-60 py-5 mx-auto lg:h-14 ">
+          <Link to="/" className="text-center">
           <p className='logoFont text-[#03384D] text-5xl font-bold'><span className='text-[#3B95B0] logoFont'>Urban</span>Utopia</p>
           </Link>
         </div>

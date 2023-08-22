@@ -16,7 +16,7 @@ const Home = () => {
                     </Link>
                 </div>
                 <div className='grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-10 md:mx-10 mx-10'>
-                    <Link to=''>
+                    <Link to='women'>
                         <div className="w-full">
                             <img className="w-full" src={category1} alt="UrbanUtopia" />
                         </div>
@@ -26,7 +26,7 @@ const Home = () => {
                             <img className="w-full" src={category2} alt="UrbanUtopia" />
                         </div>
                     </Link>
-                    <Link to=''>
+                    <Link to='kids'>
                         <div className="w-full">
                             <img className="w-full" src={category3} alt="UrbanUtopia" />
                         </div>
