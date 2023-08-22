@@ -1,5 +1,5 @@
 import React from 'react';
-import urban from '../../assets/UrbanUtopia.png'
+// import urban from '../../assets/UrbanUtopia.png'
 import image1 from '../../assets/image 64.png'
 import image2 from '../../assets/Frame 133.png'
 import image3 from '../../assets/image 76.png'
@@ -15,7 +15,9 @@ const Home = () => {
                </div>
                
            <div className='flex justify-center items-center  mt-14'>
-              <img src={urban} alt="" />
+           <div className='heading-styles'>
+                <p>Urban <span>Utopia</span></p>
+            </div>
            </div>
          <div className='grid justify-center  grid-cols-1 lg:gap-5 md:gap-5 gap-5 lg:grid-cols-3  md:grid-cols-2  mt-14'>
           <Link to="/woman">
