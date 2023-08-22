@@ -3,10 +3,12 @@ import logo from '../../../assets/logo/UrbanUtopia.png'
 import category1 from '../../../assets/TopCategory/topCategory1.png'
 import category2 from '../../../assets/TopCategory/topCategory2.png'
 import category3 from '../../../assets/TopCategory/topCategory3.png'
+import HoverTopItems from "../../../components/HoverTopItems/HoverTopItems";
 
 
 const Home = () => {
     return (
+        // home page 
         <div>
             <div className='container mx-auto'>
                 <div className='flex justify-center items-center my-16'>

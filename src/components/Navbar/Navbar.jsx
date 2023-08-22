@@ -5,7 +5,7 @@ import { Icon } from "@iconify/react";
 
 const Navbar = () => {
   return (
-    <div className="container mx-auto py-3 lg:px-0 md:px-5">
+    <div className="container mx-auto py-3 xl:px-0 lg:px-2 md:px-5">
       <div className="lg:navbar md:navbar px-0">
         <div className="flex-1 lg:w-48 w-60 py-5 mx-auto lg:h-14 ">
           <Link to="/" className="">
