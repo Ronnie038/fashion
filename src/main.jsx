@@ -10,6 +10,7 @@ import Home from './page/home/Home.jsx';
 import TopCategory from './page/home/man/TopCategory';
 import WomanCategory from './page/woman/WomanCategory';
 import Login from './page/login/Login';
+import SignUp from './page/singnUp/SignUp';
 
 const router = createBrowserRouter([
       
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
         {
           path: "/login",
           element: <Login></Login>
+        },
+        {
+          path: "/sign",
+          element: <SignUp></SignUp>
         }
       ]
      }

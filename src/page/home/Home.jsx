@@ -9,7 +9,10 @@ const Home = () => {
 
     return (
         <div className='container mx-auto '>
-               <Link to="/login">Login</Link>
+               <div className=''>
+                 <Link to="/login">Login</Link>
+                <Link to="/sign">SignUp</Link>
+               </div>
                
            <div className='flex justify-center items-center  mt-14'>
               <img src={urban} alt="" />
