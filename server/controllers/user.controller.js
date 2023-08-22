@@ -1,6 +1,6 @@
 const { signupService, findUserByEmail } = require('../services/user.service');
 const { generateToken } = require('../utils/token');
-// const User = require('../models/User');
+const User = require('../models/User');
 
 exports.signup = async (req, res, next) => {
 	try {
@@ -42,7 +42,7 @@ exports.login = async (req, res) => {
 		if (!user) {
 			return res.status(401).json({
 				status: 'fail',
-				error: 'No user found. Please create an acount',
+				error: 'No user found. Please create an account',
 			});
 		}
 
@@ -117,14 +117,14 @@ exports.verifyUser = async (req, res) => {
   `;
 	try {
 		const userId = req.params.verificationToken;
+		console.log(userId);
 
 		const verifyUser = await User.updateOne(
 			{ _id: userId },
 			{ verified: true },
-			// If `new` isn't true, `findOneAndUpdate()` will return the
-			// document as it was _before_ it was updated.
 			{ new: true }
 		);
+
 		console.log(verifyUser);
 
 		res.send(verifyContent);
