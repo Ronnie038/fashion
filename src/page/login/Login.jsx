@@ -1,5 +1,5 @@
 import React from 'react';
- 
+import { FaGoogle, FaFacebook } from 'react-icons/fa';
 import './Login.css';
 
 
@@ -31,9 +31,13 @@ const Login = () => {
         <div className='flex justify-center text-center mt-14'>
             <p>New Member ? <span>Registration Now</span> </p>
         </div>
-          <div className="flex justify-center items-center flex-col w-1/2 mt-12  border-opacity-50 ">
+          <div className="flex mx-auto flex-col w-[60%] mt-12  border-opacity-50 ">
            <div className="divider">OR</div>
         </div>
+            <div className='flex text-center mt-8 gap-4'>
+                  <button className='flex border border-black gap-2 py-3 px-8'><FaGoogle className='text-xl'></FaGoogle>  <span>Sing Up with Google</span></button>
+                  <button className='flex gap-2 border border-black  py-3 px-8'> <span className='text-xl'><FaFacebook></FaFacebook></span> Sing Up with Facebook</button>
+           </div>
       </div>
     </div>
   </div>
