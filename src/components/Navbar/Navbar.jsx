@@ -24,9 +24,9 @@ const Navbar = () => {
             </div>
           </div>
           <div>
-            <button className="border lg:w-[122px] font-medium md:w-20 text-2xl md:h-10 lg:h-10 bg-transparent px-3 border-black">
+            <Link to='/login' className="border lg:w-[122px] font-medium md:w-20 text-2xl md:h-10 lg:h-10 bg-transparent px-3 border-black">
               login
-            </button>
+            </Link>
           </div>
           <div className="md:w-9">
             <Link><Icon className="w-full text-5xl" icon="fluent:cart-16-regular" /></Link>
