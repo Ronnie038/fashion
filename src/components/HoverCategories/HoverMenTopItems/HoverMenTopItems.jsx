@@ -1,11 +1,11 @@
 import React from 'react';
-import womenTop1 from '../../assets/WomenTopCategories/img1.png'
-import womenTop2 from '../../assets/WomenTopCategories/img2.png'
-import womenTop3 from '../../assets/WomenTopCategories/img3.png'
-import menTop1 from '../../assets/MenTopCategories/img1.png'
-import menTop2 from '../../assets/MenTopCategories/img2.png'
+import menTop1 from '../../../assets/ManTopCategories/img1.png'
+import menTop2 from '../../../assets/ManTopCategories/img2.png'
+import menTop3 from '../../../assets/ManTopCategories/img3.png'
+import menTop4 from '../../../assets/ManTopCategories/img4.png'
+import menTop5 from '../../../assets/ManTopCategories/img5.png'
 
-const HoverTopItems = () => {
+const HoverMenTopItems = () => {
     return (
         <div className='container mx-auto my-10'>
             <div className='bg-white mt-10'>
@@ -13,7 +13,7 @@ const HoverTopItems = () => {
                 <div className='flex gap-8'>
                     <div className="w-40 bg-base-400">
                         <figure className="">
-                            <img src={womenTop1} alt="Shoes" />
+                            <img src={menTop1} alt="Shoes" />
                         </figure>
                         <div className="flex justify-center my-5">
                             <h2 className="text-2xl font-medium">Jeans</h2>
@@ -21,7 +21,7 @@ const HoverTopItems = () => {
                     </div>
                     <div className="w-40 bg-base-400">
                         <figure className="">
-                            <img src={womenTop1} alt="Shoes" />
+                            <img src={menTop2} alt="Shoes" />
                         </figure>
                         <div className="flex justify-center my-5">
                             <h2 className="text-2xl font-medium">Jeans</h2>
@@ -29,7 +29,7 @@ const HoverTopItems = () => {
                     </div>
                     <div className="w-40 bg-base-400">
                         <figure className="">
-                            <img src={womenTop1} alt="Shoes" />
+                            <img src={menTop3} alt="Shoes" />
                         </figure>
                         <div className="flex justify-center my-5">
                             <h2 className="text-2xl font-medium">Jeans</h2>
@@ -37,7 +37,7 @@ const HoverTopItems = () => {
                     </div>
                     <div className="w-40 bg-base-400">
                         <figure className="">
-                            <img src={womenTop1} alt="Shoes" />
+                            <img src={menTop4} alt="Shoes" />
                         </figure>
                         <div className="flex justify-center my-5">
                             <h2 className="text-2xl font-medium">Jeans</h2>
@@ -45,7 +45,7 @@ const HoverTopItems = () => {
                     </div>
                     <div className="w-40 bg-base-400">
                         <figure className="">
-                            <img src={womenTop1} alt="Shoes" />
+                            <img src={menTop5} alt="Shoes" />
                         </figure>
                         <div className="flex justify-center my-5">
                             <h2 className="text-2xl font-medium">Jeans</h2>
@@ -57,4 +57,4 @@ const HoverTopItems = () => {
     );
 };
 
-export default HoverTopItems;
+export default HoverMenTopItems;

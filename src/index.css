@@ -21,14 +21,14 @@
 banner swipper indicator
 .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal {
 
-    bottom: 100px !important;
+    bottom: 60px !important;
     left: 140px !important;
     width: 200px !important;
 }
 
 .swiper-pagination-clickable .swiper-pagination-bullet {
     cursor: pointer;
-    width: 20px !important;
+    width: 30px !important;
     height: 20px !important;
     background-color: white;
     border-radius: 50px;

@@ -1,7 +1,6 @@
 import React from 'react';
 import bannerText from '../../assets/Banner/bannerText.png'
 import bannerMen from '../../assets/Banner/bannerMen.png'
-import menTop1 from '../../assets/MenTopCategories/img1.png'
 
 
 // Import Swiper React components
@@ -15,7 +14,11 @@ import 'swiper/css/pagination';
 // import required modules
 import { Pagination } from 'swiper/modules';
 import { Link, NavLink } from 'react-router-dom';
-import HoverTopItems from '../HoverTopItems/HoverTopItems';
+import HoverManTopItems from '../HoverCategories/HoverMenTopItems/HoverMenTopItems';
+import HoverMenTopItems from '../HoverCategories/HoverMenTopItems/HoverMenTopItems';
+import HoverWomenItems from '../HoverCategories/HoverWomenItems/HoverWomenItems';
+import HoverKidsTopItems from '../HoverCategories/HoverKidsTopItems/HoverKidsTopItems';
+
 
 
 const Banner = () => {
@@ -41,7 +44,7 @@ const Banner = () => {
                                         </NavLink>
                                         <ul tabIndex={0} className="dropdown-content z-[1] menu shadow bg-base-100 ml-52">
                                             <div className='px-10 object-center hover:object-top'>
-                                                <HoverTopItems></HoverTopItems>
+                                                <HoverWomenItems></HoverWomenItems>
                                             </div>
                                         </ul>
                                     </div>
@@ -49,7 +52,7 @@ const Banner = () => {
                                         <NavLink to='/men'><span tabIndex={0} className="text-white text-2xl uppercase">Men</span></NavLink>
                                         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 ml-28">
                                             <div className='px-10'>
-                                                <HoverTopItems></HoverTopItems>
+                                                <HoverMenTopItems></HoverMenTopItems>
                                             </div>
                                         </ul>
                                     </div>
@@ -57,7 +60,7 @@ const Banner = () => {
                                         <NavLink to='/kids'><label tabIndex={0} className="text-white text-2xl uppercase">Kids</label></NavLink>
                                         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 ml-5">
                                             <div className='px-10'>
-                                                <HoverTopItems></HoverTopItems>
+                                                <HoverKidsTopItems></HoverKidsTopItems>
                                             </div>
                                         </ul>
                                     </div>
@@ -94,7 +97,7 @@ const Banner = () => {
                                         </NavLink>
                                         <ul tabIndex={0} className="dropdown-content z-[1] menu shadow bg-base-100 ml-52">
                                             <div className='px-10 object-center hover:object-top'>
-                                                <HoverTopItems></HoverTopItems>
+                                                <HoverWomenItems></HoverWomenItems>
                                             </div>
                                         </ul>
                                     </div>
@@ -102,7 +105,7 @@ const Banner = () => {
                                         <NavLink to='/men'><span tabIndex={0} className="text-white text-2xl uppercase">Men</span></NavLink>
                                         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 ml-28">
                                             <div className='px-10'>
-                                                <HoverTopItems></HoverTopItems>
+                                                <HoverMenTopItems></HoverMenTopItems>
                                             </div>
                                         </ul>
                                     </div>
@@ -110,7 +113,7 @@ const Banner = () => {
                                         <NavLink to='/kids'><label tabIndex={0} className="text-white text-2xl uppercase">Kids</label></NavLink>
                                         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 ml-5">
                                             <div className='px-10'>
-                                                <HoverTopItems></HoverTopItems>
+                                                <HoverKidsTopItems></HoverKidsTopItems>
                                             </div>
                                         </ul>
                                     </div>
@@ -147,7 +150,7 @@ const Banner = () => {
                                         </NavLink>
                                         <ul tabIndex={0} className="dropdown-content z-[1] menu shadow bg-base-100 ml-52">
                                             <div className='px-10 object-center hover:object-top'>
-                                                <HoverTopItems></HoverTopItems>
+                                                <HoverWomenItems></HoverWomenItems>
                                             </div>
                                         </ul>
                                     </div>
@@ -155,7 +158,7 @@ const Banner = () => {
                                         <NavLink to='/men'><span tabIndex={0} className="text-white text-2xl uppercase">Men</span></NavLink>
                                         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 ml-28">
                                             <div className='px-10'>
-                                                <HoverTopItems></HoverTopItems>
+                                                <HoverMenTopItems></HoverMenTopItems>
                                             </div>
                                         </ul>
                                     </div>
@@ -163,7 +166,7 @@ const Banner = () => {
                                         <NavLink to='/kids'><label tabIndex={0} className="text-white text-2xl uppercase">Kids</label></NavLink>
                                         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 ml-5">
                                             <div className='px-10'>
-                                                <HoverTopItems></HoverTopItems>
+                                                <HoverKidsTopItems></HoverKidsTopItems>
                                             </div>
                                         </ul>
                                     </div>
@@ -189,6 +192,7 @@ const Banner = () => {
                         </div>
                     </div>
                 </SwiperSlide>
+                
             </Swiper>
         </div>
     );
