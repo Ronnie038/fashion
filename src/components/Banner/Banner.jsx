@@ -1,6 +1,4 @@
 import React from 'react';
-import bannerText from '../../assets/Banner/bannerText.png'
-import bannerMen from '../../assets/Banner/bannerMen.png'
 
 
 // Import Swiper React components
@@ -18,6 +16,9 @@ import HoverManTopItems from '../HoverCategories/HoverMenTopItems/HoverMenTopIte
 import HoverMenTopItems from '../HoverCategories/HoverMenTopItems/HoverMenTopItems';
 import HoverWomenItems from '../HoverCategories/HoverWomenItems/HoverWomenItems';
 import HoverKidsTopItems from '../HoverCategories/HoverKidsTopItems/HoverKidsTopItems';
+import BannerWomen from './BannerWomen/BannerWomen';
+import BannerMan from './BannerMan/BannerMan';
+import BannerKids from './BannerKids/BannerKids';
 
 
 
@@ -71,17 +72,7 @@ const Banner = () => {
                                     <li><Link to=''>Cosmetics</Link></li>
                                     <li><Link to=''>Best Rated</Link></li>
                                 </div>
-
-                                <div className="absolute lg:top-0 top-36 md:left-36 md:top-0 lg:right-24 z-0">
-                                    <div className='flex justify-end items-center'>
-                                        <div className='xl:w-6/12 lg:w-10/12 md:w-11/12 w-11/12'>
-                                            <img className='w-full' src={bannerText} alt="" />
-                                        </div>
-                                        <div className=''>
-                                            <img className='w-full' src={bannerMen} alt="" />
-                                        </div>
-                                    </div>
-                                </div>
+                                <BannerWomen></BannerWomen>
                             </div>
                         </div>
                     </div>
@@ -125,16 +116,7 @@ const Banner = () => {
                                     <li><Link to=''>Best Rated</Link></li>
                                 </div>
 
-                                <div className="absolute lg:top-0 top-36 md:left-36 md:top-0 lg:right-24 z-0">
-                                    <div className='flex justify-end items-center'>
-                                        <div className='xl:w-6/12 lg:w-10/12 md:w-11/12 w-11/12'>
-                                            <img className='w-full' src={bannerText} alt="" />
-                                        </div>
-                                        <div className=''>
-                                            <img className='w-full' src={bannerMen} alt="" />
-                                        </div>
-                                    </div>
-                                </div>
+                                <BannerMan></BannerMan>
                             </div>
                         </div>
                     </div>
@@ -178,21 +160,12 @@ const Banner = () => {
                                     <li><Link to=''>Best Rated</Link></li>
                                 </div>
 
-                                <div className="absolute lg:top-0 top-36 md:left-36 md:top-0 lg:right-24 z-0">
-                                    <div className='flex justify-end items-center'>
-                                        <div className='xl:w-6/12 lg:w-10/12 md:w-11/12 w-11/12'>
-                                            <img className='w-full' src={bannerText} alt="" />
-                                        </div>
-                                        <div className=''>
-                                            <img className='w-full' src={bannerMen} alt="" />
-                                        </div>
-                                    </div>
-                                </div>
+                                <BannerKids></BannerKids>
                             </div>
                         </div>
                     </div>
                 </SwiperSlide>
-                
+
             </Swiper>
         </div>
     );
