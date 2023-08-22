@@ -20,7 +20,6 @@ const Home = () => {
                             <img className="w-full" src={category1} alt="UrbanUtopia" />
                         </div>
                     </Link>
-                    {/* dfdfdf */}
                     <Link to='men'>
                         <div className="w-full">
                             <img className="w-full" src={category2} alt="UrbanUtopia" />
