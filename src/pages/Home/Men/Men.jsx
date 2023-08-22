@@ -3,6 +3,7 @@ import DownloadMobile from "../../../components/DownloadMobile/DownloadMobile";
 import Footer from "../../../components/Footer/Footer";
 import Navbar from "../../../components/Navbar/Navbar";
 import MenPageCategories from "../../../components/PageCategories/MenPageCategories/MenPageCategories";
+import MenPageNewItems from "../../../components/PageNewItems/MenPageNewItems/MenPageNewItems";
 
 
 const Men = () => {
@@ -11,6 +12,7 @@ const Men = () => {
             <Navbar></Navbar>
             <Banner></Banner>
             <MenPageCategories></MenPageCategories>
+            <MenPageNewItems></MenPageNewItems>
             <DownloadMobile></DownloadMobile>
             <Footer></Footer>
         </div>

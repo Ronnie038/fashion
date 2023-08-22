@@ -10,9 +10,9 @@ const MenPageCategories = () => {
         <div>
             <div className='container mx-auto'>
                 <div className='text-center py-20'>
-                    <h3 className='text-3xl font-medium'>Top Categories</h3>
+                    <h3 className='text-3xl font-medium'>New items that you can't miss out on</h3>
                 </div>
-                <div className=' grid xl:grid-cols-5 lg:grid-cols-4 xl:mx-0 lg:mx-5 md:mx-5 md:grid-cols-4 gap-5 justify-center'>
+                <div className=' grid xl:grid-cols-5 lg:grid-cols-4 xl:mx-0 lg:mx-5 md:mx-5 md:grid-cols-4 grid-cols-1 gap-5 mx-5 justify-center'>
                     <div className="w-full bg-base-100">
                         <figure className="">
                             <img className='w-full' src={manTop1} alt="Shoes" />

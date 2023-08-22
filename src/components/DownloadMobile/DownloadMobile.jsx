@@ -4,7 +4,7 @@ import downloadMobile2 from "../../assets/icons/downloadMobile2.png";
 
 const DownloadMobile = () => {
     return (
-        <div className='flex justify-center text-center my-16'>
+        <div className='flex justify-center text-center my-20'>
             <div className='space-y-5'>
                 <p className='logoFont text-[#03384D] text-5xl'><span className='text-[#3B95B0] logoFont'>Urban</span>Utopia</p>
                 <h3 className='text-xl font-medium'>Download Our MobileApps</h3>
