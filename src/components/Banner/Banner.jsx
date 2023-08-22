@@ -34,20 +34,19 @@ const Banner = () => {
                     <div className=''>
                         <div className="xl:h-[880px] lg:h-[650px] md:h-[550px] h-[600px] bg-no-repeat bg-cover" style={{ backgroundImage: 'url(https://i.ibb.co/16Stkjh/BannerBG.png)' }}>
                             <div className='container mx-auto'>
-                                <div className="pt-8 xl:mx-1 lg:mx-4 md:mx-7 mx-4 space-x-7">
+                                <div className="pt-8 xl:mx-2 lg:mx-4 md:mx-7 mx-4 space-x-8">
                                     <div className="dropdown dropdown-right dropdown-hover z-40">
-                                        <Link to='/'>
-                                            <label tabIndex={0} className="text-white text-2xl m-1 uppercase">Women</label>
-                                        </Link>
+                                        <NavLink to='/women'>
+                                            <label tabIndex={0} className="text-white text-2xl uppercase">Women</label>
+                                        </NavLink>
                                         <ul tabIndex={0} className="dropdown-content z-[1] menu shadow bg-base-100 ml-52">
                                             <div className='px-10 object-center hover:object-top'>
                                                 <HoverTopItems></HoverTopItems>
                                             </div>
                                         </ul>
-
                                     </div>
                                     <div className="dropdown dropdown-right dropdown-hover z-40">
-                                        <NavLink><span tabIndex={0} className="text-white text-2xl m-1 uppercase">Men</span></NavLink>
+                                        <NavLink to='/men'><span tabIndex={0} className="text-white text-2xl uppercase">Men</span></NavLink>
                                         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 ml-28">
                                             <div className='px-10'>
                                                 <HoverTopItems></HoverTopItems>
@@ -55,19 +54,19 @@ const Banner = () => {
                                         </ul>
                                     </div>
                                     <div className="dropdown dropdown-right dropdown-hover z-40">
-                                        <label tabIndex={0} className="text-white text-2xl m-1 uppercase">Kids</label>
+                                        <NavLink to='/kids'><label tabIndex={0} className="text-white text-2xl uppercase">Kids</label></NavLink>
                                         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 ml-5">
                                             <div className='px-10'>
                                                 <HoverTopItems></HoverTopItems>
                                             </div>
                                         </ul>
                                     </div>
-                                    <div className='text-[#CCCCCC] space-y-3 xl:mx-2 lg:mx-5 md:mx-7 mx-5 mt-10 text-xl w-2/12'>
-                                        <li className='z-40'><Link to=''>Newest</Link></li>
-                                        <li className='z-40'><Link to=''>Trending</Link></li>
-                                        <li className='z-40'><Link to=''>Cosmetics</Link></li>
-                                        <li className='z-40'><Link to=''>Best Rated</Link></li>
-                                    </div>
+                                </div>
+                                <div className='text-[#CCCCCC] space-y-3 xl:mx-2 lg:mx-5 md:mx-7 mx-5 mt-10 text-xl w-2/12'>
+                                    <li><Link to='/'>Newest</Link></li>
+                                    <li><Link to=''>Trending</Link></li>
+                                    <li><Link to=''>Cosmetics</Link></li>
+                                    <li><Link to=''>Best Rated</Link></li>
                                 </div>
 
                                 <div className="absolute lg:top-0 top-36 md:left-36 md:top-0 lg:right-24 z-0">
@@ -84,14 +83,112 @@ const Banner = () => {
                         </div>
                     </div>
                 </SwiperSlide>
-                <SwiperSlide>Slide 2</SwiperSlide>
-                <SwiperSlide>Slide 3</SwiperSlide>
-                <SwiperSlide>Slide 4</SwiperSlide>
-                <SwiperSlide>Slide 5</SwiperSlide>
-                <SwiperSlide>Slide 6</SwiperSlide>
-                <SwiperSlide>Slide 7</SwiperSlide>
-                <SwiperSlide>Slide 8</SwiperSlide>
-                <SwiperSlide>Slide 9</SwiperSlide>
+                <SwiperSlide>
+                    <div className=''>
+                        <div className="xl:h-[880px] lg:h-[650px] md:h-[550px] h-[600px] bg-no-repeat bg-cover" style={{ backgroundImage: 'url(https://i.ibb.co/16Stkjh/BannerBG.png)' }}>
+                            <div className='container mx-auto'>
+                                <div className="pt-8 xl:mx-2 lg:mx-4 md:mx-7 mx-4 space-x-8">
+                                    <div className="dropdown dropdown-right dropdown-hover z-40">
+                                        <NavLink to='/women'>
+                                            <label tabIndex={0} className="text-white text-2xl uppercase">Women</label>
+                                        </NavLink>
+                                        <ul tabIndex={0} className="dropdown-content z-[1] menu shadow bg-base-100 ml-52">
+                                            <div className='px-10 object-center hover:object-top'>
+                                                <HoverTopItems></HoverTopItems>
+                                            </div>
+                                        </ul>
+                                    </div>
+                                    <div className="dropdown dropdown-right dropdown-hover z-40">
+                                        <NavLink to='/men'><span tabIndex={0} className="text-white text-2xl uppercase">Men</span></NavLink>
+                                        <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 ml-28">
+                                            <div className='px-10'>
+                                                <HoverTopItems></HoverTopItems>
+                                            </div>
+                                        </ul>
+                                    </div>
+                                    <div className="dropdown dropdown-right dropdown-hover z-40">
+                                        <NavLink to='/kids'><label tabIndex={0} className="text-white text-2xl uppercase">Kids</label></NavLink>
+                                        <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 ml-5">
+                                            <div className='px-10'>
+                                                <HoverTopItems></HoverTopItems>
+                                            </div>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div className='text-[#CCCCCC] space-y-3 xl:mx-2 lg:mx-5 md:mx-7 mx-5 mt-10 text-xl w-2/12'>
+                                    <li><Link to='/'>Newest</Link></li>
+                                    <li><Link to=''>Trending</Link></li>
+                                    <li><Link to=''>Cosmetics</Link></li>
+                                    <li><Link to=''>Best Rated</Link></li>
+                                </div>
+
+                                <div className="absolute lg:top-0 top-36 md:left-36 md:top-0 lg:right-24 z-0">
+                                    <div className='flex justify-end items-center'>
+                                        <div className='xl:w-6/12 lg:w-10/12 md:w-11/12 w-11/12'>
+                                            <img className='w-full' src={bannerText} alt="" />
+                                        </div>
+                                        <div className=''>
+                                            <img className='w-full' src={bannerMen} alt="" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className=''>
+                        <div className="xl:h-[880px] lg:h-[650px] md:h-[550px] h-[600px] bg-no-repeat bg-cover" style={{ backgroundImage: 'url(https://i.ibb.co/16Stkjh/BannerBG.png)' }}>
+                            <div className='container mx-auto'>
+                                <div className="pt-8 xl:mx-2 lg:mx-4 md:mx-7 mx-4 space-x-8">
+                                    <div className="dropdown dropdown-right dropdown-hover z-40">
+                                        <NavLink to='/women'>
+                                            <label tabIndex={0} className="text-white text-2xl uppercase">Women</label>
+                                        </NavLink>
+                                        <ul tabIndex={0} className="dropdown-content z-[1] menu shadow bg-base-100 ml-52">
+                                            <div className='px-10 object-center hover:object-top'>
+                                                <HoverTopItems></HoverTopItems>
+                                            </div>
+                                        </ul>
+                                    </div>
+                                    <div className="dropdown dropdown-right dropdown-hover z-40">
+                                        <NavLink to='/men'><span tabIndex={0} className="text-white text-2xl uppercase">Men</span></NavLink>
+                                        <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 ml-28">
+                                            <div className='px-10'>
+                                                <HoverTopItems></HoverTopItems>
+                                            </div>
+                                        </ul>
+                                    </div>
+                                    <div className="dropdown dropdown-right dropdown-hover z-40">
+                                        <NavLink to='/kids'><label tabIndex={0} className="text-white text-2xl uppercase">Kids</label></NavLink>
+                                        <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 ml-5">
+                                            <div className='px-10'>
+                                                <HoverTopItems></HoverTopItems>
+                                            </div>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div className='text-[#CCCCCC] space-y-3 xl:mx-2 lg:mx-5 md:mx-7 mx-5 mt-10 text-xl w-2/12'>
+                                    <li><Link to='/'>Newest</Link></li>
+                                    <li><Link to=''>Trending</Link></li>
+                                    <li><Link to=''>Cosmetics</Link></li>
+                                    <li><Link to=''>Best Rated</Link></li>
+                                </div>
+
+                                <div className="absolute lg:top-0 top-36 md:left-36 md:top-0 lg:right-24 z-0">
+                                    <div className='flex justify-end items-center'>
+                                        <div className='xl:w-6/12 lg:w-10/12 md:w-11/12 w-11/12'>
+                                            <img className='w-full' src={bannerText} alt="" />
+                                        </div>
+                                        <div className=''>
+                                            <img className='w-full' src={bannerMen} alt="" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </SwiperSlide>
             </Swiper>
         </div>
     );

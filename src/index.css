@@ -10,3 +10,30 @@
 .logoFont {
     font-family: 'Gorditas', cursive;
 }
+
+/* active Route  */
+.active{
+    color: red;
+    border-bottom: 2px solid white;
+    padding-bottom: 8px;
+}
+
+banner swipper indicator
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal {
+
+    bottom: 100px !important;
+    left: 140px !important;
+    width: 200px !important;
+}
+
+.swiper-pagination-clickable .swiper-pagination-bullet {
+    cursor: pointer;
+    width: 20px !important;
+    height: 20px !important;
+    background-color: white;
+    border-radius: 50px;
+}
+.swiper-pagination-bullet-active {
+    width: 50px !important;
+    border-radius: 50px;
+}
