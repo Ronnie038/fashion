@@ -67,6 +67,13 @@ exports.login = async (req, res) => {
 		const token = generateToken(user);
 		const { password: pwd, ...other } = user.toObject();
 
+		res.cookie('jwToken', token, {
+			expires: new Date(Date.now() + 604800000),
+			// 604800000
+			httpOnly: true,
+			secure: true,
+		});
+
 		res.status(200).json({
 			status: 'success',
 			message: 'Successfully logged in',
@@ -89,7 +96,7 @@ exports.getMe = async (req, res) => {
 
 		res.status(200).json({
 			status: 'success',
-			user: req.user,
+			user: user,
 		});
 	} catch (error) {
 		res.status(500).json({
