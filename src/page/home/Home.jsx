@@ -6,19 +6,22 @@ import image3 from '../../assets/image 76.png'
 import { Link } from 'react-router-dom';
 
 const Home = () => {
+
     return (
         <div className='container mx-auto '>
+               <Link to="/login">Login</Link>
+               
            <div className='flex justify-center items-center  mt-14'>
               <img src={urban} alt="" />
            </div>
          <div className='grid justify-center  grid-cols-1 lg:gap-5 md:gap-5 gap-5 lg:grid-cols-3  md:grid-cols-2  mt-14'>
-          <Link>
+          <Link to="/woman">
           <div className="card w-[470px] h-[700px] card-side bg-base-100 shadow-xl">
              <figure><img src={image1} alt="Movie"/>
             </figure> 
         </div>
           </Link>
-         <Link to="/man">
+         <Link to="/men">
          <div className="card w-[470px] h-[700px] card-side bg-base-100 shadow-xl">
              <figure><img src={image2} alt="Movie"/>
             </figure>

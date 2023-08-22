@@ -6,7 +6,7 @@ import image4 from '../../../assets/image 72.png'
 import image5 from '../../../assets/image 74.png'
 import Shoes from '../shoes/Shoes';
 
-const TopCategory = () => {
+const          TopCategory = () => {
     return (
         <div className='container mx-auto'>
              <h2 className='flex justify-center items-center text-black font-semibold text-2xl mt-14'>Top Categories</h2>

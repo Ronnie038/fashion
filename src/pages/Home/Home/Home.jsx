@@ -5,6 +5,7 @@ const Home = () => {
     return (
         <div>
             <Link to="men">Men Page</Link>
+           
         </div>
     );
 };
