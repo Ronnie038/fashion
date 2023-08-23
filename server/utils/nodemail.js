@@ -10,21 +10,30 @@ const transporter = nodemailer.createTransport({
 });
 
 // Generate a verification token (you might use a library like `crypto` for this)
-// const verificationToken = generateVerificationToken(32);
+// co
 
-const mailHandler = async (req, res, next) => {
+/**
+ *
+ * @param {handling 2 deferent} req
+ * @param  {1:requesting for generate email verification link}
+ * @param {2:requesting for generate forget password link}
+ */
+const mailHandler = async (req, res) => {
 	const verificationToken = req?.user?._id.toString();
-
 	const passwordResetToken = req?.resetToken;
 
 	// Compose the verification link
 
-	const verificationLink = `${process.env.APP_URL}/api/v1/user/${
-		verificationToken ? 'verify' : 'forget-password'
-	}/${verificationToken || passwordResetToken}`;
+	const forgetPasswordLink = `${process.env.REACT_APP_URL}/user/forget-password/${passwordResetToken}`;
+	const verifyEmailLink = `${process.env.APP_URL}/api/v1/user/verify
+	/${verificationToken}`;
+
+	const verificationLink = verificationToken
+		? verifyEmailLink
+		: forgetPasswordLink;
 
 	// HTML template for the verification email
-	console.log(verificationLink);
+	// console.log(verificationLink);
 	const emailTemplate = `
       <h1>${
 				verificationToken ? 'Verify Your Email' : 'Reset your password'
@@ -40,7 +49,7 @@ const mailHandler = async (req, res, next) => {
 		const mailOptions = {
 			from: process.env.EMAIL,
 			to: req.body.email,
-			subject: 'Email Verification',
+			subject: verificationToken ? 'Email Verification' : 'Forget Password',
 			html: emailTemplate,
 		};
 

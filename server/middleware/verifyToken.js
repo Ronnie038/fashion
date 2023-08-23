@@ -14,8 +14,7 @@ const User = require('../models/User');
 module.exports = async (req, res, next) => {
 	try {
 		// const token = req.headers?.authorization?.split(' ')[1];
-		const token = req.cookies.jwToken;
-
+		const token = req?.cookies?.jwToken;
 		if (!token) {
 			return res.status(401).json({
 				status: 'fail',
@@ -35,7 +34,7 @@ module.exports = async (req, res, next) => {
 	} catch (error) {
 		res.status(403).json({
 			status: 'fail',
-			error: 'Invalid token',
+			error: 'session expired please login again',
 		});
 	}
 };

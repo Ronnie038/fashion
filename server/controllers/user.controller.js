@@ -1,6 +1,4 @@
 const { signupService, findUserByEmail } = require('../services/user.service');
-const jwt = require('jsonwebtoken');
-const { promisify } = require('util');
 const { generateToken } = require('../utils/token');
 const User = require('../models/User');
 
@@ -92,6 +90,25 @@ exports.login = async (req, res) => {
 	}
 };
 
+exports.logOut = async (req, res) => {
+	try {
+		// req?.clearCookie('jwtToken'); // Replace 'jwtToken' with your actual cookie name
+		// console.log(`Logged out ${req.cookies.jwToken}`);
+		res.clearCookie('jwToken');
+		const token = req?.cookies?.jwToken;
+
+		res.status(200).json({
+			status: 'success',
+			message: 'Logged out successfully!',
+		});
+	} catch (error) {
+		res.status(500).json({
+			status: 'fail',
+			error,
+		});
+	}
+};
+
 exports.resetPassword = async (req, res, next) => {
 	try {
 		const email = req.body.email;
@@ -129,11 +146,7 @@ exports.resetPassword = async (req, res, next) => {
 exports.forgetPassword = async (req, res) => {
 	try {
 		const passwordResetToken = req?.params?.resetToken;
-		// const decoded = await promisify(jwt.verify)(
-		// 	passwordResetToken,
-		// 	process.env.ACCESS_TOKEN_SECRET
-		// );
-		// console.log(decoded);
+
 		const user = await User.findOne({ passwordResetToken });
 		const hashedPassword = user.createHashedPassword(req.body.password);
 
@@ -144,9 +157,6 @@ exports.forgetPassword = async (req, res) => {
 			{ passwordResetToken: '', password: hashedPassword },
 			{ new: true }
 		);
-		// const user = await User.findOneAndUpdate({
-		// 	passwordResetToken: resetToken,
-		// });
 
 		if (!resetPasswordUser) {
 			return res.status(401).json({
