@@ -13,8 +13,8 @@ const LoginPage = () => {
                 <div className="hero">
                     <div className=" flex-col lg:flex-row-reverse">
 
-                        <div className="xl:max-w-full lg:max-w-3xl md:max-w-2xl max-w-sm flex-shrink-0 rounded-md shadow-md bg-white mx-5 md:mx-0 lg:mx-0 ">
-                            <form className="card-body lg:px-28 space-y-5">
+                        <div className="xl:max-w-full lg:max-w-3xl md:max-w-2xl max-w-sm flex-shrink-0 rounded-md shadow-md bg-white mx-1 md:mx-0 lg:mx-0 xl:mx-0 ">
+                            <form className="card-body lg:px-28 md:px-28 px-[16px] space-y-5">
                                 <div>
                                     <p >Welcome to</p>
                                     <Link to="" className="">
@@ -30,11 +30,11 @@ const LoginPage = () => {
                                 </div>
                                 <div className="form-control mt-10">
                                     <input type="submit" value='Log in' className='btn bg-[#0C4E67] text-white mt-4 normal-case text-[16px] h-16 rounded-none hover:bg-[#3B95B0]' />
-                                    <label className="label flex justify-end">
+                                    <label className="label flex lg:justify-end md:justify-end justify-center">
                                         <Link href="#" className="label-text-alt link link-hover text-[16px] my-3 text-[#1877F2]">Forgot password?</Link>
                                     </label>
                                 </div>
-                                <div className='text-center px-20'>
+                                <div className='text-center lg:px-20'>
                                     <p className='text-[17px]'>New Member? <Link className=' text-[#1877F2]'>Registration Now</Link></p>
                                     <div className="divider w-10/12 mx-auto text-black pt-8">Or</div>
                                 </div>
