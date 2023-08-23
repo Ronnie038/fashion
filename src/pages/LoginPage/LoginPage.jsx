@@ -11,9 +11,9 @@ const LoginPage = () => {
             <Navbar></Navbar>
             <div className='bg-[#C8C2BF] py-20'>
                 <div className="hero">
-                    <div className="hero-content flex-col lg:flex-row-reverse">
+                    <div className=" flex-col lg:flex-row-reverse">
 
-                        <div className="xl:max-w-full lg:max-w-3xl md:max-w-2xl max-w-sm flex-shrink-0 rounded-md shadow-md bg-white">
+                        <div className="xl:max-w-full lg:max-w-3xl md:max-w-2xl max-w-sm flex-shrink-0 rounded-md shadow-md bg-white mx-5 md:mx-0 lg:mx-0 ">
                             <form className="card-body lg:px-28 space-y-5">
                                 <div>
                                     <p >Welcome to</p>
@@ -33,27 +33,26 @@ const LoginPage = () => {
                                         <Link href="#" className="label-text-alt link link-hover text-[18px] my-3 text-[#1877F2]">Forgot password?</Link>
                                     </label>
                                 </div>
-                            </form>
-                            <div className='text-center px-20'>
-                                <p className='text-[18px]'>New Member? <Link className=' text-[#1877F2]'>Registration Now</Link></p>
-                                <div className="divider w-10/12 mx-auto text-black pt-8">Or</div>
-                            </div>
-                            <div className='xl:px-32 lg:px-32 md:px-12 px-8'>
-                                <div className='xl:flex lg:flex justify-center md:flex-wrap flex-wrap space-y-5 items-center gap-5 w-full my-16'>
-                                    <Link className='btn bg-transparent lg:w-6/12 w-full rounded-none border border-black'>
+                                <div className='text-center px-20'>
+                                    <p className='text-[18px]'>New Member? <Link className=' text-[#1877F2]'>Registration Now</Link></p>
+                                    <div className="divider w-10/12 mx-auto text-black pt-8">Or</div>
+                                </div>
+                                <div className='flex flex-wrap gap-5 justify-between  my-8'>
+                                    <Link className='btn bg-transparent rounded-none w-full lg:w-auto border border-black'>
                                         <div className='flex items-center gap-2'>
                                             <Icon icon="entypo-social:google" className='text-white bg-red-600 rounded-full p-2 text-3xl' />
                                             <span className='normal-case'>Sing Up with Google</span>
                                         </div>
                                     </Link>
-                                    <Link className='btn bg-transparent border-1 lg:w-6/12 w-full rounded-none border border-black'>
+                                    <Link className='btn bg-transparent border-1 rounded-none w-full lg:w-auto border border-black'>
                                         <div className='flex items-center gap-2'>
                                             <Icon icon="ic:baseline-facebook" className='text-3xl text-[#1877F2]' />
                                             <span className='normal-case'>Sing Up with Facebook</span>
                                         </div>
                                     </Link>
                                 </div>
-                            </div>
+                            </form>
+
                         </div>
                     </div>
                 </div>
