@@ -9,7 +9,7 @@ const Home = () => {
     return (
         // home page 
         <div>
-            <div className='container mx-auto'>
+            <div className='container mx-auto my-5'>
                 <div className='flex justify-center items-center my-16'>
                     <Link to="/" className="">
                         <p className='logoFont text-[#03384D] text-5xl font-bold'><span className='text-[#3B95B0] logoFont'>Urban</span>Utopia</p>

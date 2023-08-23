@@ -29,7 +29,7 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="md:w-9">
-            <Link><Icon className="w-full text-5xl" icon="fluent:cart-16-regular" /></Link>
+            <Link to='/cart'><Icon className="w-full text-5xl" icon="fluent:cart-16-regular" /></Link>
           </div>
         </div>
       </div>

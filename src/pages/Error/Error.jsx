@@ -1,14 +1,11 @@
 import React from 'react';
 import errorImg from '../../assets/Error/Error.png'
-import Navbar from '../../components/Navbar/Navbar';
-import Footer from '../../components/Footer/Footer';
 import DownloadMobile from '../../components/DownloadMobile/DownloadMobile';
 import { Link } from 'react-router-dom';
 
 const Error = () => {
     return (
         <div>
-            <Navbar></Navbar>
             <div className='py-16'>
                 <div className='flex justify-center'>
                     <img src={errorImg} alt="UrbanUtopia" />
@@ -18,7 +15,6 @@ const Error = () => {
                 </div>
             </div>
             <DownloadMobile></DownloadMobile>
-            <Footer></Footer>
         </div>
     );
 };

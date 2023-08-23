@@ -11,6 +11,7 @@ import Kids from './pages/Home/Kids/Kids';
 import Error from './pages/Error/Error';
 import OrderDone from './pages/OrderDone/OrderDone';
 import LoginPage from './pages/LoginPage/LoginPage';
+import Cart from './pages/Cart/Cart';
 
 
 const router = createBrowserRouter([
@@ -25,26 +26,33 @@ const router = createBrowserRouter([
       },
       // pages 
       {
-        path: 'men',
+        path: '/men',
         element: <Men></Men>
       },
       {
-        path: 'women',
+        path: '/women',
         element: <Women></Women>
       },
       {
-        path: 'kids',
+        path: '/kids',
         element: <Kids></Kids>
       },
       // order pages
       {
-        path: 'orderDone',
+        path: '/orderDone',
         element: <OrderDone></OrderDone>
       },
+      // login page 
       {
-        path: 'login',
+        path: '/login',
         element: <LoginPage></LoginPage>
       },
+      // cart page 
+      {
+        path: '/cart',
+        element: <Cart></Cart>
+      },
+
       {
         path: '*',
         element: <Error></Error>

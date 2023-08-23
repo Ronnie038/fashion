@@ -1,9 +1,6 @@
 import React from 'react';
-import DownloadMobile from '../../components/DownloadMobile/DownloadMobile';
-import { Link } from 'react-router-dom';
-import { Icon } from '@iconify/react';
 
-const LoginPage = () => {
+const SignUp = () => {
     return (
         <div>
             <div className='bg-[#C8C2BF] py-20'>
@@ -60,4 +57,4 @@ const LoginPage = () => {
     );
 };
 
-export default LoginPage;
+export default SignUp;

@@ -1,15 +1,12 @@
 import React from 'react';
 import checkIcon from '../../assets/icons/OrderDone/Check.png'
 import bikeIcon from '../../assets/icons/OrderDone/bike.png'
-import Navbar from '../../components/Navbar/Navbar';
 import DownloadMobile from '../../components/DownloadMobile/DownloadMobile';
-import Footer from '../../components/Footer/Footer';
 import { Icon } from '@iconify/react';
 
 const OrderDone = () => {
     return (
         <div>
-            <Navbar></Navbar>
             <div className='bg-[#C8C2BF] py-20'>
                 <div className='xl:max-w-7xl lg:max-w-2xl md:max-w-2xl max-w-xs mx-auto bg-white py-16'>
                     <div className='flex justify-center'>
@@ -29,7 +26,6 @@ const OrderDone = () => {
                 </div>
             </div>
             <DownloadMobile></DownloadMobile>
-            <Footer></Footer>
         </div>
     );
 };
