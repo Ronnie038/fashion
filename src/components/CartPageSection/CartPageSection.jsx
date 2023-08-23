@@ -7,6 +7,7 @@ const CartPageSection = () => {
 
 
     return (
+        // not mobile responsive
         <div>
             <div className='container mx-auto my-20'>
                 <div class="grid grid-rows-3 lg:grid-flow-col gap-8 xl:mx-0 lg:mx-5 md:mx-5">
@@ -70,17 +71,17 @@ const CartPageSection = () => {
                             </li>
                             <div className="divider m-0"></div>
                             <li className='flex justify-between py-2 px-6'>
-                                <span className='text-xl font-medium'>Sub Total</span>
+                                <span className='text-xl font-medium'>Vat</span>
                                 <span className='text-xl font-medium'>00.00$</span>
                             </li>
                             <div className="divider m-0"></div>
                             <li className='flex justify-between py-2 px-6'>
-                                <span className='text-xl font-medium'>Sub Total</span>
+                                <span className='text-xl font-medium'>Delivery Charge</span>
                                 <span className='text-xl font-medium'>00.00$</span>
                             </li>
                             <div className="divider m-0"></div>
                             <li className='flex justify-between py-2 px-6'>
-                                <span className='text-xl font-bold'>Sub Total</span>
+                                <span className='text-xl font-bold'>Total</span>
                                 <span className='text-xl font-bold'>00.00$</span>
                             </li>
                         </ul>

@@ -14,10 +14,11 @@ const LoginPage = () => {
                             <form className="card-body lg:px-28 md:px-28 px-[16px] space-y-5">
                                 <div>
                                     <p >Welcome to</p>
-                                    <Link to="" className="">
+                                    <Link to="/" className="">
                                         <p className='logoFont mb-8 mt-3 text-[#03384D] lg:text-5xl text-3xl font-bold'><span className='text-[#3B95B0] logoFont'>Urban</span>Utopia</p>
                                     </Link>
                                 </div>
+                                
                                 <div className="form-control">
                                     <input type="email" required placeholder="Email" className="input placeholder-black input-bordered h-16 rounded-none border-black text-black text-xl" />
                                 </div>

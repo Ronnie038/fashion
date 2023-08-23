@@ -12,6 +12,8 @@ import Error from './pages/Error/Error';
 import OrderDone from './pages/OrderDone/OrderDone';
 import LoginPage from './pages/LoginPage/LoginPage';
 import Cart from './pages/Cart/Cart';
+import SignUp from './pages/SignUp/SignUp';
+import SingleProductDetailsPage from './pages/SingleProductDetailsPage/SingleProductDetailsPage';
 
 
 const router = createBrowserRouter([
@@ -47,10 +49,18 @@ const router = createBrowserRouter([
         path: '/login',
         element: <LoginPage></LoginPage>
       },
+      {
+        path: '/signUp',
+        element: <SignUp></SignUp>
+      },
       // cart page 
       {
         path: '/cart',
         element: <Cart></Cart>
+      },
+      {
+        path: '/singleProductDetailsPage',
+        element: <SingleProductDetailsPage></SingleProductDetailsPage>
       },
 
       {

@@ -1,17 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
 
 const Main = () => {
     const location = useLocation();
-
-    const notShow = location.pathname.includes('/')
+    const shouldRenderNavbarAndFooter = location.pathname !== '/';
+    
     return (
         <div>
-            <Navbar></Navbar>
+            {shouldRenderNavbarAndFooter && <Navbar></Navbar>}
             <Outlet></Outlet>
-            <Footer></Footer>
+            {shouldRenderNavbarAndFooter && <Footer></Footer>}
         </div>
     );
 };
