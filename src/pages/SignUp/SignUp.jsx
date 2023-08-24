@@ -2,16 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Icon } from '@iconify/react';
 import DownloadMobile from '../../components/DownloadMobile/DownloadMobile';
+import { Helmet } from 'react-helmet';
 
 const SignUp = () => {
     return (
         <div>
+            <Helmet><title>UrbanUtopia | SignUp</title></Helmet>
             <div className='bg-[#C8C2BF] py-20'>
                 <div className="hero">
                     <div className=" flex-col lg:flex-row-reverse">
 
                         <div className="xl:max-w-full lg:max-w-3xl md:max-w-2xl max-w-sm flex-shrink-0 rounded-md shadow-md bg-white mx-1 md:mx-0 lg:mx-0 xl:mx-0 ">
-                            <form className="card-body lg:px-28 md:px-28 px-[16px] space-y-5">
+                            <form className="card-body lg:px-28 md:px-28 px-[16px] space-y-5 py-16">
                                 <div>
                                     <p >Welcome to</p>
                                     <Link to="/" className="">
@@ -19,23 +21,30 @@ const SignUp = () => {
                                     </Link>
                                 </div>
                                 <div className="form-control">
-                                    <input type="name" required placeholder="Name" className="input placeholder-black input-bordered h-16 rounded-none border-black text-black text-xl" />
+                                    <input type="name" required placeholder="Name*" className="input placeholder-black input-bordered h-16 rounded-none border-black text-black text-xl" />
                                 </div>
                                 <div className="form-control">
-                                    <input type="email" required placeholder="Email" className="input placeholder-black input-bordered h-16 rounded-none border-black text-black text-xl" />
+                                    <input type="name" required placeholder="Mobile Number*" className="input placeholder-black input-bordered h-16 rounded-none border-black text-black text-xl" />
+                                </div>
+                                <div className="form-control">
+                                    <input type="email" required placeholder="Email*" className="input placeholder-black input-bordered h-16 rounded-none border-black text-black text-xl" />
                                 </div>
                                 <div className="form-control relative">
                                     <input type="password" required placeholder="Password" className="placeholder-black input h-16 rounded-none input-bordered border-black text-black text-xl placeholder-dots" />
                                     <div className='absolute right-5 top-5'><Icon icon="mdi:eye-off" className='text-3xl' /></div>
                                 </div>
+                                <div className="form-control relative">
+                                    <input type="password" required placeholder="Confirm Password" className="placeholder-black input h-16 rounded-none input-bordered border-black text-black text-xl placeholder-dots" />
+                                    <div className='absolute right-5 top-5'><Icon icon="mdi:eye-off" className='text-3xl' /></div>
+                                </div>
                                 <div className="form-control mt-10">
-                                    <input type="submit" value='Log in' className='btn bg-[#0C4E67] text-white mt-4 normal-case text-[16px] h-16 rounded-none hover:bg-[#3B95B0]' />
+                                    <input type="submit" value='Sign Up' className='btn bg-[#0C4E67] text-white mt-4 normal-case text-[16px] h-16 rounded-none hover:bg-[#3B95B0]' />
                                     <label className="label flex lg:justify-end md:justify-end justify-center">
                                         <Link href="#" className="label-text-alt link link-hover text-[16px] my-3 text-[#1877F2]">Forgot password?</Link>
                                     </label>
                                 </div>
                                 <div className='text-center lg:px-20'>
-                                    <p className='text-[17px]'>New Member? <Link to='/signUp' className=' text-[#1877F2]'>Registration Now</Link></p>
+                                    <p className='text-[17px]'>Already Member? <Link to='/login' className=' text-[#1877F2]'>Log in Now</Link></p>
                                     <div className="divider w-10/12 mx-auto text-black pt-8">Or</div>
                                 </div>
                                 <div className='flex flex-wrap gap-5 justify-between  my-8'>

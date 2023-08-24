@@ -2,16 +2,18 @@ import React from 'react';
 import DownloadMobile from '../../components/DownloadMobile/DownloadMobile';
 import { Link } from 'react-router-dom';
 import { Icon } from '@iconify/react';
+import { Helmet } from 'react-helmet';
 
 const LoginPage = () => {
     return (
         <div>
+            <Helmet><title>UrbanUtopia | Login</title></Helmet>
             <div className='bg-[#C8C2BF] py-20'>
                 <div className="hero">
                     <div className=" flex-col lg:flex-row-reverse">
 
                         <div className="xl:max-w-full lg:max-w-3xl md:max-w-2xl max-w-sm flex-shrink-0 rounded-md shadow-md bg-white mx-1 md:mx-0 lg:mx-0 xl:mx-0 ">
-                            <form className="card-body lg:px-28 md:px-28 px-[16px] space-y-5">
+                            <form className="card-body lg:px-28 md:px-28 px-[16px] space-y-5 py-16">
                                 <div>
                                     <p >Welcome to</p>
                                     <Link to="/" className="">
@@ -40,13 +42,13 @@ const LoginPage = () => {
                                     <Link className='btn bg-transparent rounded-none w-full lg:w-auto border border-black'>
                                         <div className='flex items-center gap-2'>
                                             <Icon icon="entypo-social:google" className='text-white bg-red-600 rounded-full p-2 text-3xl' />
-                                            <span className='normal-case'>Sing Up with Google</span>
+                                            <span className='normal-case'>Log in with Google</span>
                                         </div>
                                     </Link>
                                     <Link className='btn bg-transparent border-1 rounded-none w-full lg:w-auto border border-black'>
                                         <div className='flex items-center gap-2'>
                                             <Icon icon="ic:baseline-facebook" className='text-3xl text-[#1877F2]' />
-                                            <span className='normal-case'>Sing Up with Facebook</span>
+                                            <span className='normal-case'>Log in with Facebook</span>
                                         </div>
                                     </Link>
                                 </div>

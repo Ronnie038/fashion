@@ -2,6 +2,7 @@ import React from 'react';
 import { Icon } from '@iconify/react';
 import CartImg from '../../assets/WomanNewItems/img2.png'
 import Rating from 'react-rating'
+import ProductCouter from '../ProductCouter/ProductCouter';
 
 const CartPageSection = () => {
 
@@ -40,20 +41,14 @@ const CartPageSection = () => {
                                             fullSymbol={<Icon icon="ic:baseline-star" />}
                                             className='text-2xl text-[#40F223]'
                                         ></Rating>
-                                        <span>7.5k Rating</span>
+                                        <span>7.5k Ratings</span>
                                     </div>
                                 </div>
                             </div>
                             <div className='flex justify-center items-center lg:w-auto md:w-48 '>
                                 <div>
                                     <h2 className='text-5xl font-bold text-center mb-8'>00.00$</h2>
-                                    <div className="flex items-center w-52">
-                                        <input type="text" value={0} className="text-center text-2xl font-semibold w-full input rounded-none border-black disabled focus:outline-none" />
-                                        <div className='flex flex-col-reverse gap-1 border-y-[1px] border-r-[1px] border-black py-[5px] px-4'>
-                                            <button className=" bg-transparent border-none"><Icon icon="teenyicons:down-solid" /></button>
-                                            <button className=" bg-transparent border-none"><Icon icon="teenyicons:up-solid" /></button>
-                                        </div>
-                                    </div>
+                                    <ProductCouter></ProductCouter>
                                 </div>
                             </div>
                             <div className='md:ml-auto'>
