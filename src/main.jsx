@@ -14,6 +14,7 @@ import LoginPage from './pages/LoginPage/LoginPage';
 import Cart from './pages/Cart/Cart';
 import SignUp from './pages/SignUp/SignUp';
 import SingleProductDetailsPage from './pages/SingleProductDetailsPage/SingleProductDetailsPage';
+import ProductPurchasePage from './components/ProductPurchasePage/ProductPurchasePage';
 
 
 const router = createBrowserRouter([
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
       {
         path: '/singleProductDetailsPage',
         element: <SingleProductDetailsPage></SingleProductDetailsPage>
+      },
+      {
+        path: '/productPurchasePage',
+        element: <ProductPurchasePage></ProductPurchasePage>
       },
 
       {

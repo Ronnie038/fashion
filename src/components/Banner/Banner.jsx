@@ -19,6 +19,7 @@ import HoverKidsTopItems from '../HoverCategories/HoverKidsTopItems/HoverKidsTop
 import BannerWomen from './BannerWomen/BannerWomen';
 import BannerMan from './BannerMan/BannerMan';
 import BannerKids from './BannerKids/BannerKids';
+import { Fade, Flip, JackInTheBox, Slide, Zoom } from 'react-awesome-reveal';
 
 
 

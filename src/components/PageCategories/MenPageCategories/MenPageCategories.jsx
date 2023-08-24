@@ -1,4 +1,5 @@
 import React from 'react';
+import { Fade } from "react-awesome-reveal";
 import manTop1 from '../../../assets/ManTopCategories/img1.png';
 import manTop2 from '../../../assets/ManTopCategories/img2.png';
 import manTop3 from '../../../assets/ManTopCategories/img3.png';
@@ -13,15 +14,17 @@ const MenPageCategories = () => {
                     <h3 className='text-3xl font-medium'>New items that you can't miss out on</h3>
                 </div>
                 <div className=' grid xl:grid-cols-5 lg:grid-cols-4 xl:mx-0 lg:mx-5 md:mx-5 md:grid-cols-4 grid-cols-1 gap-5 mx-5 justify-center'>
-                    <div className="w-full bg-base-100">
-                        <figure className="">
-                            <img className='w-full' src={manTop1} alt="Shoes" />
-                        </figure>
-                        <div className="card-body items-center text-center">
-                            <h2 className="text-2xl font-medium">Jeans</h2>
+                    <Fade>
+                        <div className="w-full bg-white">
+                            <figure className="">
+                                <img className='w-full' src={manTop1} alt="Shoes" />
+                            </figure>
+                            <div className="card-body items-center text-center">
+                                <h2 className="text-2xl font-medium">Jeans</h2>
+                            </div>
                         </div>
-                    </div>
-                    <div className="w-full bg-base-100">
+                    </Fade>
+                    <div className="w-full bg-white">
                         <figure className="">
                             <img className='w-full' src={manTop2} alt="Shoes" />
                         </figure>

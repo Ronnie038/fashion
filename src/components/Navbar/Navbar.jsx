@@ -5,11 +5,11 @@ import { Icon } from "@iconify/react";
 
 const Navbar = () => {
   return (
-    <div className="container mx-auto py-3 xl:px-0 lg:px-2 md:px-5">
+    <div className="container mx-auto py-1 xl:px-0 lg:px-2 md:px-5">
       <div className="lg:navbar md:navbar px-0">
         <div className="flex-1 lg:w-48 md:w-60 py-5 mx-auto lg:h-14 ">
           <Link to="/" className="text-center">
-          <p className='logoFont text-[#03384D] text-5xl font-bold'><span className='text-[#3B95B0] logoFont'>Urban</span>Utopia</p>
+            <p className='logoFont text-[#03384D] text-4xl font-bold'><span className='text-[#3B95B0] logoFont'>Urban</span>Utopia</p>
           </Link>
         </div>
         <div className="flex items-center lg:gap-5 justify-center gap-3">
@@ -24,7 +24,7 @@ const Navbar = () => {
             </div>
           </div>
           <div>
-            <Link to='/login' className="border lg:w-[122px] font-medium md:w-20 text-2xl md:h-10 lg:h-10 bg-transparent px-3 border-black">
+            <Link to='/login' className="border lg:w-[122px] font-medium md:w-20 text-2xl md:h-10 lg:h-10 bg-transparent px-3 py-1 border-black">
               login
             </Link>
           </div>

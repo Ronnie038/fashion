@@ -1,26 +1,21 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
 import CartImg from '../../assets/WomanNewItems/img2.png'
-import Rating from 'react-rating'
+import Rating from 'react-rating';
 import ProductCouter from '../ProductCouter/ProductCouter';
 import { Link } from 'react-router-dom';
 
-const CartPageSection = () => {
-
-
+const ProductPurchaseSection = () => {
     return (
-        // not mobile responsive
         <div>
             <div className='container mx-auto my-20'>
                 <div class="grid grid-rows-3 lg:grid-flow-col gap-8 xl:mx-0 lg:mx-5 md:mx-5">
                     <div class="col-span-2 border p-5">
-                        <div className="flex items-center justify-between">
+                        <div className="flex items-center justify-center">
+
                             <div className="flex items-center gap-5 cursor-pointer">
-                                <input type="checkbox" checked="" className="checkbox rounded-md border-2 border-black w-8 h-8" />
-                                <span className="label-text text-2xl font-semibold">Select all</span>
-                            </div>
-                            <div>
-                                <Icon icon="fluent-mdl2:delete" className='text-3xl' />
+                                <Icon icon="icons8:plus" className='text-5xl' />
+                                <span className="label-text text-3xl font-semibold">Add Delivery Address</span>
                             </div>
                         </div>
 
@@ -86,11 +81,11 @@ const CartPageSection = () => {
                 </div>
                 <div className='flex justify-center gap-5 mt-20'>
                     <Link to='/women' className='btn rounded-none w-52 h-14 text-xl bg-transparent border-2 hover:border-[#3B95B0] hover:text-[#3B95B0] hover:bg-transparent border-black normal-case'>Return Shop</Link>
-                    <Link to='/productPurchasePage' className='btn rounded-none w-52 h-14 text-xl border-0 bg-[#0C4E67] hover:bg-[#3B95B0] text-white normal-case'>Check Out</Link>
+                    <Link className='btn rounded-none w-52 h-14 text-xl border-0 bg-[#0C4E67] hover:bg-[#3B95B0] text-white normal-case'>Order Now</Link>
                 </div>
             </div>
         </div>
     );
 };
 
-export default CartPageSection;
+export default ProductPurchaseSection;
