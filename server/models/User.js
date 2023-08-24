@@ -9,16 +9,16 @@ const userSchema = mongoose.Schema(
 			type: String,
 			trim: true,
 			lowercase: true,
-			// unique: true,
+			unique: true,
 			required: [true, 'Email is Required'],
 		},
 		password: {
 			type: String,
-			required: [true, 'Password is required'],
+			// required: [true, 'Password is required'],
 		},
 		confirmPassword: {
 			type: String,
-			required: [true, 'Please confirm your password'],
+			// required: [true, 'Please confirm your password'],
 			validate: {
 				validator: function (value) {
 					return value === this.password;
@@ -35,20 +35,14 @@ const userSchema = mongoose.Schema(
 			enum: ['buyer', 'admin'],
 			default: 'buyer',
 		},
-		firstName: {
+		userName: {
 			type: String,
 			// required: [true, "Please provide firstname"],
 			trim: true,
 			minLength: [3, 'Name must at least 3 character'],
 			maxLength: [50, 'name is too large'],
 		},
-		lastName: {
-			type: String,
-			// required: [true, "Please provide firstname"],
-			trim: true,
-			minLength: [3, 'Name must at least 3 character'],
-			maxLength: [50, 'name is too large'],
-		},
+
 		contactNumber: {
 			type: Number,
 			validate: [
@@ -73,12 +67,15 @@ const userSchema = mongoose.Schema(
 
 userSchema.pre('save', function (next) {
 	const password = this.password;
+	if (password) {
+		const hashedPassword = bcrypt.hashSync(password);
 
-	const hashedPassword = bcrypt.hashSync(password);
-
-	this.password = hashedPassword;
-	this.confirmPassword = undefined;
-	next();
+		this.password = hashedPassword;
+		this.confirmPassword = undefined;
+		next();
+	} else {
+		next();
+	}
 });
 
 userSchema.methods.comparePassword = function (password, hash) {

@@ -9,12 +9,9 @@ const transporter = nodemailer.createTransport({
 	},
 });
 
-// Generate a verification token (you might use a library like `crypto` for this)
-// co
-
 /**
  *
- * @param {handling 2 deferent} req
+ * @param {handling 2 defferent request} req
  * @param  {1:requesting for generate email verification link}
  * @param {2:requesting for generate forget password link}
  */
@@ -24,9 +21,8 @@ const mailHandler = async (req, res) => {
 
 	// Compose the verification link
 
-	const forgetPasswordLink = `${process.env.REACT_APP_URL}/user/forget-password/${passwordResetToken}`;
-	const verifyEmailLink = `${process.env.APP_URL}/api/v1/user/verify
-	/${verificationToken}`;
+	const forgetPasswordLink = `${process.env.CLIENT_URL}/user/forget-password/${passwordResetToken}`;
+	const verifyEmailLink = `${process.env.APP_URL}/api/v1/user/verify/${verificationToken}`;
 
 	const verificationLink = verificationToken
 		? verifyEmailLink
@@ -64,7 +60,7 @@ const mailHandler = async (req, res) => {
 			} else {
 				res.status(200).json({
 					status: 'success',
-					message: 'A confirmation message has been sent',
+					message: 'A confirmation message has been sent to your email',
 				});
 			}
 		});

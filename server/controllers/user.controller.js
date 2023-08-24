@@ -90,23 +90,13 @@ exports.login = async (req, res) => {
 	}
 };
 
-exports.logOut = async (req, res) => {
-	try {
-		// req?.clearCookie('jwtToken'); // Replace 'jwtToken' with your actual cookie name
-		// console.log(`Logged out ${req.cookies.jwToken}`);
-		res.clearCookie('jwToken');
-		const token = req?.cookies?.jwToken;
-
-		res.status(200).json({
-			status: 'success',
-			message: 'Logged out successfully!',
-		});
-	} catch (error) {
-		res.status(500).json({
-			status: 'fail',
-			error,
-		});
-	}
+exports.logOut = (req, res, next) => {
+	req.logout(function (err) {
+		if (err) {
+			return next(err);
+		}
+		res.redirect(process.env.CLIENT_URL);
+	});
 };
 
 exports.resetPassword = async (req, res, next) => {
@@ -129,7 +119,8 @@ exports.resetPassword = async (req, res, next) => {
 		if (!user) {
 			return res.status(401).json({
 				status: 'fail',
-				message: 'Please create an account',
+				message:
+					'this account does not have an account please create an account',
 			});
 		}
 
@@ -179,6 +170,7 @@ exports.forgetPassword = async (req, res) => {
 
 exports.getMe = async (req, res) => {
 	try {
+		console.log(req.user);
 		const user = await findUserByEmail(req.user?.email);
 
 		res.status(200).json({
@@ -193,6 +185,16 @@ exports.getMe = async (req, res) => {
 	}
 };
 
+exports.facebookCallback = async (req, res) => {
+	try {
+		// Handle Facebook login and user creation/update
+		// ... (similar to the logic in the previous examples)
+	} catch (error) {
+		console.error('Error in Facebook callback:', error);
+		res.status(500).json({ error: 'An error occurred during login' });
+	}
+};
+
 exports.verifyUser = async (req, res) => {
 	const verifyContent = `
     <html>
@@ -202,7 +204,7 @@ exports.verifyUser = async (req, res) => {
       <body>
         <h1 style="text-align:center;color:white; margin:3rem auto 0 auto;background-color:green;width:300px;padding:50px;">Email verified</h1>
 		<div className="" style="text-align:center">
-		<a href="https://www.google.com" target="_blank" style="text-align:center;color:white; margin:3rem auto 0 auto;background-color:red;padding:20px;text-decoration:none;font-size:20px;font-weight:bold">Go to login</a>
+		<a href="${process.env.REACT_APP_LOGIN_URL}" target="_blank" style="text-align:center;color:white; margin:3rem auto 0 auto;background-color:red;padding:20px;text-decoration:none;font-size:20px;font-weight:bold">Go to login</a>
 		</div>
 
         

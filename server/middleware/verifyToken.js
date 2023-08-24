@@ -15,6 +15,11 @@ module.exports = async (req, res, next) => {
 	try {
 		// const token = req.headers?.authorization?.split(' ')[1];
 		const token = req?.cookies?.jwToken;
+
+		if (req.user) {
+			console.log(req.user);
+			return next();
+		}
 		if (!token) {
 			return res.status(401).json({
 				status: 'fail',
