@@ -9,8 +9,8 @@ const userSchema = mongoose.Schema(
 			type: String,
 			trim: true,
 			lowercase: true,
-			unique: true,
-			required: [true, 'Email is Required'],
+			// unique: true,
+			// required: [true, 'Email is Required'],
 		},
 		password: {
 			type: String,
@@ -57,7 +57,7 @@ const userSchema = mongoose.Schema(
 			type: String,
 			validate: [validator.isURL, 'Please provide a valid url'],
 		},
-
+		facebookId: String,
 		passwordChangedAt: Date,
 		passwordResetToken: String,
 		passwordResetExpires: Date,

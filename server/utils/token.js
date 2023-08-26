@@ -1,7 +1,6 @@
 const jwt = require('jsonwebtoken');
 
 exports.generateToken = (userInfo, expire = '7d') => {
-	console.log(userInfo);
 	const payload = {
 		email: userInfo.email,
 		role: userInfo.role,

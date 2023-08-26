@@ -17,7 +17,6 @@ module.exports = async (req, res, next) => {
 		const token = req?.cookies?.jwToken;
 
 		if (req.user) {
-			console.log(req.user);
 			return next();
 		}
 		if (!token) {

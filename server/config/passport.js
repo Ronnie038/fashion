@@ -4,6 +4,42 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const User = require('../models/User');
 
 passport.use(
+	new FacebookStrategy(
+		{
+			clientID: process.env.FACEBOOK_CLIENT_ID,
+			clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
+			callbackURL: '/api/v1/user/facebook/callback',
+			profileFields: ['id', 'displayName', 'photos', 'email'],
+		},
+		async (accessToken, refreshToken, profile, done) => {
+			try {
+				let user = await User.findOne({ facebookId: profile.id });
+
+				const newUser = {
+					userName: profile?.displayName,
+					facebookId: profile.id,
+					verified: true,
+					imageURL: profile?.photos[0].value,
+				};
+
+				if (!user) {
+					user = await User.create(newUser);
+					// Since facebook login is verified
+					// ... other relevant data
+				}
+				// console.log(user);
+				return done(null, user);
+				// Handle Facebook login and user creation/update
+				// ... (similar to the logic in the previous examples)
+			} catch (error) {
+				console.error('Error in google strategy:', error);
+				return done(error, false);
+			}
+		}
+	)
+);
+
+passport.use(
 	new GoogleStrategy(
 		{
 			clientID: process.env.GOOGLE_CLIENT_ID,

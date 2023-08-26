@@ -12,20 +12,31 @@ router.route('/login').get(userController.login);
 router.get('/logout', userController.logOut);
 
 // facebook login routes
-router.get('/facebook', passport.authenticate('facebook'));
-router.get('/facebook/callback', userController.facebookCallback);
+router.get(
+	'/facebook',
+	passport.authenticate('facebook', {
+		scope: ['id', 'displayName', 'photos', 'email', ''],
+	})
+);
+router.get(
+	'/facebook/callback',
+	passport.authenticate('facebook', {
+		successRedirect: 'http://localhost:3000/login',
+		failureRedirect: '/api/v1/user/login/failed',
+	})
+);
 
-router.get('/login/success', (req, res) => {
-	if (req.user) {
-		res.status(200).json({
-			error: false,
-			message: 'Successfully Loged In',
-			user: req.user,
-		});
-	} else {
-		res.status(403).json({ error: true, message: 'Not Authorized' });
-	}
-});
+// router.get('/login/success', (req, res) => {
+// 	if (req.user) {
+// 		res.status(200).json({
+// 			error: false,
+// 			message: 'Successfully Loged In',
+// 			user: req.user,
+// 		});
+// 	} else {
+// 		res.status(403).json({ error: true, message: 'Not Authorized' });
+// 	}
+// });
 router.get('/login/failed', (req, res) => {
 	res.status(401).json({
 		status: 'fail',

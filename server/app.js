@@ -2,7 +2,7 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const passport = require('passport');
 const session = require('express-session');
-const cookieSession = require('cookie-session');
+// const cookieSession = require('cookie-session');
 const passportSetup = require('./config/passport');
 
 const app = express();
@@ -20,9 +20,13 @@ const mongoose = require('mongoose');
 // );
 app.use(
 	session({
+		name: 'login-session',
 		secret: process.env.ACCESS_TOKEN_SECRET,
 		resave: true,
 		saveUninitialized: true,
+		cookie: {
+			maxAge: 604800000,
+		},
 	})
 );
 app.use(passport.initialize());

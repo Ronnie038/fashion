@@ -185,16 +185,6 @@ exports.getMe = async (req, res) => {
 	}
 };
 
-exports.facebookCallback = async (req, res) => {
-	try {
-		// Handle Facebook login and user creation/update
-		// ... (similar to the logic in the previous examples)
-	} catch (error) {
-		console.error('Error in Facebook callback:', error);
-		res.status(500).json({ error: 'An error occurred during login' });
-	}
-};
-
 exports.verifyUser = async (req, res) => {
 	const verifyContent = `
     <html>
