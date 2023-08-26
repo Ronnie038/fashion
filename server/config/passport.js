@@ -39,6 +39,8 @@ passport.use(
 	)
 );
 
+// google
+
 passport.use(
 	new GoogleStrategy(
 		{
