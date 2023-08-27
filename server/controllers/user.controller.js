@@ -91,6 +91,7 @@ exports.login = async (req, res) => {
 };
 
 exports.logOut = (req, res, next) => {
+	res.clearCookie('jwToken');
 	req.logout(function (err) {
 		if (err) {
 			return next(err);
@@ -170,12 +171,11 @@ exports.forgetPassword = async (req, res) => {
 
 exports.getMe = async (req, res) => {
 	try {
-		console.log(req.user);
+		console.log({ user: req.user });
 		const user = await findUserByEmail(req.user?.email);
 
 		res.status(200).json({
-			status: 'success',
-			user: user,
+			user,
 		});
 	} catch (error) {
 		res.status(500).json({

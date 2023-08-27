@@ -42,13 +42,18 @@ app.use(
 );
 
 // routes
-
 const userRoute = require('./routes/user.route');
+const paymentRoute = require('./routes/payment.route');
+const orderRoute = require('./routes/order.route');
+
+// root route
 app.get('/', (req, res) => {
 	return res.send('hello from behind');
 });
 
-// user route
+//
 app.use('/api/v1/user', userRoute);
+app.use('/api/v1/payment', paymentRoute);
+app.use('/api/v1/order', orderRoute);
 
 module.exports = app;

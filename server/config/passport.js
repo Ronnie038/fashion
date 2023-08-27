@@ -16,7 +16,7 @@ passport.use(
 				let user = await User.findOne({ facebookId: profile.id });
 
 				const newUser = {
-					userName: profile?.displayName,
+					name: profile?.displayName,
 					facebookId: profile.id,
 					verified: true,
 					imageURL: profile?.photos[0].value,
@@ -54,7 +54,7 @@ passport.use(
 				let user = await User.findOne({ email: profile.emails[0].value });
 
 				const newUser = {
-					userName: profile?.displayName,
+					name: profile?.displayName,
 					email: profile?.emails[0].value,
 					verified: profile?.emails[0].verified,
 					imageURL: profile?.photos[0].value,

@@ -35,7 +35,7 @@ const userSchema = mongoose.Schema(
 			enum: ['buyer', 'admin'],
 			default: 'buyer',
 		},
-		userName: {
+		name: {
 			type: String,
 			// required: [true, "Please provide firstname"],
 			trim: true,
