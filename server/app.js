@@ -18,6 +18,7 @@ const mongoose = require('mongoose');
 // 		maxAge: 24 * 60 * 60 * 100,
 // 	})
 // );
+app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
 app.use(
 	session({
 		name: 'login-session',
@@ -45,6 +46,8 @@ app.use(
 const userRoute = require('./routes/user.route');
 const paymentRoute = require('./routes/payment.route');
 const orderRoute = require('./routes/order.route');
+const productRoute = require('./routes/product.route');
+const cartRoutes = require('./routes/cart.route');
 
 // root route
 app.get('/', (req, res) => {
@@ -55,5 +58,7 @@ app.get('/', (req, res) => {
 app.use('/api/v1/user', userRoute);
 app.use('/api/v1/payment', paymentRoute);
 app.use('/api/v1/order', orderRoute);
+app.use('/api/v1/products', productRoute);
+app.use('/api/v1/cart', cartRoutes);
 
 module.exports = app;

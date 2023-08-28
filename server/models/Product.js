@@ -42,26 +42,15 @@ const productSchema = mongoose.Schema(
 				message: "size can't be {VALUE}",
 			},
 		],
-		imageURLs: [
+		imageUrls: [
 			{
 				type: String,
 				required: [true, 'Please provide the img urls'],
-
-				validate: {
-					validator: (value) => {
-						let isValid = true;
-						if (!validator.isURL(value)) {
-							isValid = false;
-						}
-
-						return isValid;
-					},
-					message: 'Please provide valid urls',
-				},
 			},
 		],
 		category: {
 			type: String,
+			lowercase: true,
 			required: true,
 		},
 	},

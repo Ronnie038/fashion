@@ -64,10 +64,6 @@ router.post('/forget-password/:resetToken', userController.forgetPassword);
 router.route('/verify/:verificationToken').get(userController.verifyUser);
 
 router.get('/profile', verifyToken, userController.getMe);
-// router.get(
-// 	'/profile',
-// 	passport.authenticate('jwt', { session: false }),
-// 	userController.getMe
-// ); // get current logged in user profile info (for testing)
+
 
 module.exports = router;

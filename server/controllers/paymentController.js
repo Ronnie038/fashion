@@ -17,10 +17,10 @@ exports.processPayment = async (req, res) => {
 			total_amount: order.price,
 			currency: 'BDT',
 			tran_id: tran_id, // use unique tran_id for each api call
-			success_url: `${process.env.APP_URL}/api/v1/payment/ssl-success/${tran_id}`,
-			fail_url: `${process.env.APP_URL}/api/v1/payment/ssl-fail`,
-			cancel_url: `${process.env.APP_URL}/api/v1/payment/ssl-cancel`,
-			ipn_url: `${process.env.APP_URL}/api/v1/payment/ssl-ipn`,
+			success_url: `${process.env.CLIENT_URL}/api/v1/payment/success/${tran_id}`,
+			fail_url: `${process.env.APP_URL}/api/v1/payment/fail`,
+			cancel_url: `${process.env.APP_URL}/api/v1/payment/cancel`,
+			ipn_url: `${process.env.APP_URL}/api/v1/payment/ipn`,
 			shipping_method: 'Courier',
 			product_name: 'Computer.',
 			product_category: order.productCategory,
@@ -44,7 +44,6 @@ exports.processPayment = async (req, res) => {
 			ship_country: 'Bangladesh',
 		};
 
-		console.log(paymentData);
 		const sslcommer = new SSLCommerzPayment(
 			process.env.SANDBOX_STORE_ID,
 			process.env.SANDBOX_STORE_PASSWORD,
@@ -75,29 +74,24 @@ exports.paymentSuccess = async (req, res, next) => {
 	const transId = req?.params?.transId;
 	const succesOrder = await Order.findOneAndUpdate(
 		{ transactionId: transId },
-		{ $set: { paymentStatus: true } },
+		{ $set: { paidStatus: true } },
 		{
 			new: true,
 		}
 	);
 
-	if (succesOrder.paymentStatus) {
-		return res.status(200).json({
-			status: 'success',
-			message: 'Payment successFull',
-		});
+	if (succesOrder.paidStatus) {
+		return res.redirect(`${process.env.CLIENT_URL}/payment/success/${transId}`);
 	}
 };
 exports.paymentFailure = async (req, res, next) => {
-	return res.status(400).json({
-		data: req.body,
-	});
+	return res.redirect(`${process.env.CLIENT_URL}/payment/fail`);
 };
+
 exports.paymentCancel = async (req, res, next) => {
-	return res.status(400).json({
-		data: req.body,
-	});
+	return res.redirect(`${process.env.CLIENT_URL}/payment/cancel`);
 };
+
 exports.paymentIpn = async (req, res, next) => {
 	return res.status(400).json({
 		data: req.body,

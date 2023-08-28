@@ -22,7 +22,12 @@ exports.getOrders = async (req, res) => {
 			status: 'success',
 			data: orders,
 		});
-	} catch (error) {}
+	} catch (error) {
+		return res.status(500).json({
+			status: 'fail',
+			message: error.message,
+		});
+	}
 };
 
 exports.createOrder = async (req, res) => {
@@ -47,5 +52,23 @@ exports.createOrder = async (req, res) => {
 			status: 'fail',
 			error,
 		});
+	}
+};
+
+exports.updateOrder = async (req, res) => {
+	try {
+		const orderId = req.params.id; // Assuming the order ID is part of the URL
+		const updateData = req.body;
+		const updatedOrder = await Order.findByIdAndUpdate(orderId, updateData, {
+			new: true,
+		});
+		if (!updatedOrder) {
+			return res.status(404).json({ error: 'Order not found.' });
+		}
+		res.json(updatedOrder);
+	} catch (error) {
+		res
+			.status(500)
+			.json({ error: 'An error occurred while updating the order.' });
 	}
 };

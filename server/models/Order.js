@@ -32,13 +32,18 @@ const OrderSchema = mongoose.Schema(
 		contactNumber: {
 			type: Number,
 		},
-		paymentStatus: {
+		paidStatus: {
 			type: Boolean,
 			enum: [true, false],
 			default: false,
 		},
 		paymentMethod: {
 			type: String,
+		},
+		orderStatus: {
+			type: String,
+			enum: ['pending', 'processing', 'completed', 'canceled'],
+			default: 'pending',
 		},
 		area: {
 			type: String,
