@@ -53,6 +53,12 @@ const productSchema = mongoose.Schema(
 			lowercase: true,
 			required: true,
 		},
+		section: {
+			type: String,
+			enum: {
+				values: ['men', 'women', 'kids'],
+			},
+		},
 	},
 	{
 		timestamps: true,
